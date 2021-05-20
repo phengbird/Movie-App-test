@@ -14,12 +14,14 @@
             </div>
 
             <div class="text-gray-400 text-sm">
+                
                 {{-- @foreach ($movies['genre_ids'] as $genre)
                     {{ $genres->get($genre) }} 
                     @if (!$loop->last)
                         ,
                     @endif
                 @endforeach --}}
+
                 {{-- solve space prob in inspect --}}
                 <div class="text-gray-400 text-sm">@foreach ($movies['genre_ids'] as $genre){{ $genres->get($genre) }}@if(!$loop->last),@endif @endforeach</div>
             </div>
