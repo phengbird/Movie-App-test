@@ -19425,7 +19425,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nError: PostCSS plugin tailwindcss requires PostCSS 8.\nMigration guide for end-users:\nhttps://github.com/postcss/postcss/wiki/PostCSS-8-for-end-users\n    at Processor.normalize (D:\\laravel_project\\laravel_7_movie\\node_modules\\postcss-loader\\node_modules\\postcss\\lib\\processor.js:153:15)\n    at new Processor (D:\\laravel_project\\laravel_7_movie\\node_modules\\postcss-loader\\node_modules\\postcss\\lib\\processor.js:56:25)\n    at postcss (D:\\laravel_project\\laravel_7_movie\\node_modules\\postcss-loader\\node_modules\\postcss\\lib\\postcss.js:55:10)\n    at D:\\laravel_project\\laravel_7_movie\\node_modules\\postcss-loader\\src\\index.js:140:12\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n    at D:\\laravel_project\\laravel_7_movie\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at D:\\laravel_project\\laravel_7_movie\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at D:\\laravel_project\\laravel_7_movie\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (D:\\laravel_project\\laravel_7_movie\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at D:\\laravel_project\\laravel_7_movie\\node_modules\\postcss-loader\\src\\index.js:208:9\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

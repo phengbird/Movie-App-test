@@ -9,9 +9,19 @@ module.exports = {
     extend: {
       '96' : '24rem'
     },
+    spinner:(theme) => ({
+      defualt : {
+        color : '#dae1e7',
+        size : '1em',
+        border : '2px',
+        speed : '500ms',
+      },
+    })
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-spinner')(),
+  ],
 }
