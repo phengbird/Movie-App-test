@@ -26,7 +26,7 @@ class ActorViewModel extends ViewModel
             'profile_path' => $this->actor['profile_path'] 
                             ? 'https://image.tmdb.org/t/p/w300/'.$this->actor['profile_path'] 
                             : 'https://via.placeholder.com/300x400',
-        ])->dump();
+        ]);
     }
 
     public function social()
@@ -35,7 +35,7 @@ class ActorViewModel extends ViewModel
             'twitter' => $this->social['twitter_id'] ? 'https://twitter.com/'.$this->social['twitter_id'] : null,
             'facebook' => $this->social['facebook_id'] ? 'https://facebook.com/'.$this->social['facebook_id'] : null,
             'instagram' => $this->social['instagram_id'] ? 'https://instagram.com/'.$this->social['instagram_id'] : null,
-        ])->dump();
+        ]);
     }
 
     public function knownForMovies()
@@ -49,7 +49,7 @@ class ActorViewModel extends ViewModel
                     : 'https://via.placeholder.com/185x278',
                 'title' => isset($movie['title']) ?$movie['title'] : 'Untitled',
             ]);
-        })->dump();
+        });
     }
 
     public function credits()
@@ -77,6 +77,6 @@ class ActorViewModel extends ViewModel
                 'release_year' => isset($releaseDate) ? Carbon::parse($releaseDate)->format('Y') : 'Future','title' => $title,
                 'character' => isset($movie['character']) ? $movie['character'] : '',
             ]);
-        })->sortByDesc('release_date')->dump();
+        })->sortByDesc('release_date');
     }
 }
