@@ -52,9 +52,9 @@ class ViewMovieTest extends TestCase
         
         $response = $this->get(route('movie.show', 12345));
         $response->assertSee('Fake Jumanji');
-        // $response->assertSee('Jeanne McCarthy');
+        $response->assertSee('Jeanne McCarthy');
         $response->assertSee('Dwayne Johnson');
-        // $response->assertSee('Casting Director');
+        $response->assertSee('Casting Director');
         
      }
 
@@ -74,31 +74,31 @@ class ViewMovieTest extends TestCase
     private function fakePopularMovie()
     {
         return Http::response([
-                'results' => [
-                    [
-                        "popularity" => 406.677,
-                        "vote_count" => 2607,
-                        "video" => false,
-                        "poster_path" => "/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
-                        "id" => 419704,
-                        "adult" => false,
-                        "backdrop_path" => "/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",
-                        "original_language" => "en",
-                        "original_title" => "Fake Movie",
-                        "genre_ids" => [
-                            12,
-                            18,
-                            9648,
-                            878,
-                            53,
-                        ],
-                        "title" => "Fake Movie",
-                        "vote_average" => 6,
-                        "overview" => "Fake movie description. The near future, a time when both hope and hardships drive humanity to look to the stars and beyond. While a mysterious phenomenon menaces to destroy life on planet earth.",
-                        "release_date" => "2019-09-17",
-                    ]
-                ]
-            ], 200);
+          'results' => [
+            [
+              "popularity" => 406.677,
+              "vote_count" => 2607,
+              "video" => false,
+              "poster_path" => "/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
+              "id" => 419704,
+              "adult" => false,
+              "backdrop_path" => "/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",
+              "original_language" => "en",
+              "original_title" => "Fake Movie",
+              "genre_ids" => [
+                  12,
+                  18,
+                  9648,
+                  878,
+                  53,
+              ],
+              "title" => "Fake Movie",
+              "vote_average" => 6,
+              "overview" => "Fake movie description. The near future, a time when both hope and hardships drive humanity to look to the stars and beyond. While a mysterious phenomenon menaces to destroy life on planet earth.",
+              "release_date" => "2019-09-17",
+            ]
+          ]
+        ], 200);
     }
 
     private function fakeNowPlayingMovie()

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="movie-info">
+    <div class="movie-info  border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex flex-none md:flex-row flex-col">
             <img src=" {{ $movies['poster_path'] }} " alt="{{$movies['title']}}" class="w-64 md:w-96">
 
@@ -90,11 +90,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                 @foreach ($movies['cast'] as $cast)
                     <div class="mt-8">
-                        <a href="#">
+                        <a href="{{ route('actors.show',$cast['id'])}}">
                             <img src=" {{"https://image.tmdb.org/t/p/w300".$cast['profile_path']}} " alt="{{$cast['name']}}" class="hover:opacity-75 transition ease-in-out duration-150">
                         </a>
                         <div class="mt-2">
-                            <a href="#" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
+                            <a href="{{ route('actors.show',$cast['id'])}}" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
                             <div class="text-sm text-gray-400">
                                 {{ $cast['character'] }}
                             </div>
