@@ -4,7 +4,7 @@
     <div class="movie-info  border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex flex-none md:flex-row flex-col">
             <div class="flex-none">
-                <img src="{{ $actor['profile_path'] }}" alt="{{ $actor['name'] }}" class="w-64 md:w-96">
+                <img src="{{ $actor['profile_path'] }}" alt="{{ $actor['name'] }}" class="w-76">
                 <ul class="flex items-center mt-4">
                     @if ($social['facebook'])
                         <li>
@@ -55,10 +55,10 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
                     @foreach ($knownForMovies as $movies)
                         <div class="mt-4">
-                            <a href="{{ route('movie.show',$movies['id']) }}">
+                            <a href="{{ $movies['linkToPage'] }}">
                                 <img src="{{ $movies['poster_path'] }}" alt="{{ $movies['title'] }}" class="hover:opacity-75 transition ease-in-out duration-150">
                             </a>
-                            <a href="{{ route('movie.show',$movies['id']) }}" class="text-sm leading-normal block text-gray-400 hover:text-white mt-1">{{ $movies['title'] }}</a>
+                            <a href="{{ $movies['linkToPage'] }}" class="text-sm leading-normal block text-gray-400 hover:text-white mt-1">{{ $movies['title'] }}</a>
                         </div>
                     @endforeach
                 </div>

@@ -35,8 +35,6 @@
                 <p class="infinite-scroll-last hidden">No more</p>
                 <p class="infinite-scroll-error hidden">Error</p>
             </div>
-
-            
         </div>
 
         {{-- for button next and previous --}}

@@ -28,7 +28,7 @@ class MovieViewModel extends ViewModel
             'cast' => collect($this->movies['credits']['cast'])->take(5),
             'images' => collect($this->movies['images']['backdrops'])->take(9),
         ])->only([
-            'poster_path','id','vote_average','release_date','genre_ids','title','overview','genres','images','crew','cast','videos','credits','release_year'
+            'poster_path','id' ,'vote_average','release_date','genre_ids','title','overview','genres','images','crew','cast','videos','credits','release_year'
         ]);
     }
 }
