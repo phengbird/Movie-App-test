@@ -5,14 +5,14 @@
         type="text" 
         class="bg-gray-800 text-sm rounded-full w-64 px-4 pl-8 py-1 focus:shadow-outline focus:outline-none" 
         {{-- for segment(1) also can use this Request::is(movies/*) --}}
-        {{-- @if (\Request::segment(1) === 'movies' || \Request::is('/'))
-            placeholder="Movies Name"
+        @if (\Request::segment(1) === 'movies' || \Request::is('/'))
+            placeholder="Search Movies (Press '/' to focus)"
         @elseif (\Request::is('actors/*') || \Request::is('actors'))
-            placeholder="Actors Name"
+            placeholder="Search Actors (Press '/' to focus)"
         @elseif(\Request::is('tv') || \Request::is('tv/*'))
-            placeholder="Tv Name"
-        @endif --}}
-        placeholder="Search (Press '/' to focus)"
+            placeholder="Search Tv (Press '/' to focus)"
+        @endif
+        {{-- placeholder="Search (Press '/' to focus)" --}}
         x-ref="search"
         @keydown.window="
             if(event.keyCode === 191) {
@@ -40,7 +40,7 @@
                 <ul>
                     @foreach ($searchResults as $results)
                         <li class="border-b border-gray-700">
-                            {{-- @if (\Request::is('/') || \Request::is('movies/*'))
+                            @if ($url['path'] == '/' || str_contains($this->com,'movies'))
                                 <a 
                                     href="{{ route('movie.show' , $results['id']) }}" class="block hover:bg-gray-700 px-3 py-3 flex items-center"
                                     @if ($loop->last) @keydown.tab = "isOpen=false" @endif
@@ -53,7 +53,7 @@
                                     <span class="ml-4">{{ $results['title'] }}</span>
                                 </a>
 
-                            @elseif (\Request::is('actors') || \Request::is('actors/*'))
+                            @elseif ($url['path'] == '/actors' || strpos($this->com,'actors'))
                                 <a 
                                     href="{{ route('actors.show' , $results['id']) }}" class="block hover:bg-gray-700 px-3 py-3 flex items-center"
                                     @if ($loop->last) @keydown.tab = "isOpen=false" @endif
@@ -66,9 +66,9 @@
                                     <span class="ml-4">{{ $results['name'] }}</span>
                                 </a>
                                 
-                            @else 
+                            @elseif ($url['path'] == '/tv' || str_contains($this->com,'tv')) 
                                 <a 
-                                    href="{{ route('actors.show' , $results['id']) }}" class="block hover:bg-gray-700 px-3 py-3 flex items-center"
+                                    href="{{ route('tv.show' , $results['id']) }}" class="block hover:bg-gray-700 px-3 py-3 flex items-center"
                                     @if ($loop->last) @keydown.tab = "isOpen=false" @endif
                                     >
                                     @if ($results['poster_path'])
@@ -78,8 +78,10 @@
                                     @endif
                                     <span class="ml-4">{{ $results['name'] }}</span>
                                 </a>
-                            @endif --}}
-                            <a 
+                              
+                                
+                            @endif
+                            {{-- <a 
                                 href="{{ route('movie.show' , $results['id']) }}" class="block hover:bg-gray-700 px-3 py-3 flex items-center"
                                 @if ($loop->last) @keydown.tab = "isOpen=false" @endif
                                 >
@@ -89,7 +91,7 @@
                                     <img src="https://via.placeholder.com/50x72" alt="poster" class="w-10">
                                 @endif
                                 <span class="ml-4">{{ $results['title'] }}</span>
-                            </a>
+                            </a> --}}
                         </li>
                     @endforeach
                 </ul>

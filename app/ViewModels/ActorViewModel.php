@@ -25,7 +25,7 @@ class ActorViewModel extends ViewModel
             'age' => Carbon::parse($this->actor['birthday'])->age,
             'profile_path' => $this->actor['profile_path'] 
                             ? 'https://image.tmdb.org/t/p/w300/'.$this->actor['profile_path'] 
-                            : 'https://via.placeholder.com/300x400',
+                            : '/img/no-photo.jpg',
         ]);
     }
 
